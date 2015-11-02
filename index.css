@@ -1,0 +1,7 @@
+@import "@economist/component-typography";
+
+.loading {
+  font-size: 1rem;
+  font-family: var(--fontfamily-display);
+}
+
