@@ -1,6 +1,6 @@
 {
   "name": "@economist/component-loading",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A component that displays a very subtle loading indicator.",
   "author": "The Economist (http://economist.com)",
   "license": "ISC",
@@ -110,7 +110,7 @@
     "doc:css": "cssnext --sourcemap example.css bundle.css",
     "doc:css:watch": "npm run doc:css -- --watch",
     "doc:html": "npm-assets . && devpack-doc index standalone",
-    "doc:html:watch": "npm-watch",
+    "doc:html:watch": "npm-watch -- --watch",
     "doc:js": "npm run prepublish && browserify -d $npm_package_config_testbundle_opts",
     "doc:js:watch": "watchify $npm_package_config_testbundle_opts",
     "doc:watch": "parallelshell 'npm run doc:html:watch' 'npm run doc:js:watch' 'npm run doc:css:watch'",
@@ -127,7 +127,8 @@
   },
   "dependencies": {
     "@economist/component-devpack": "^3.5.0",
-    "@economist/component-typography": "^1.4.3"
+    "@economist/component-typography": "^1.4.3",
+    "@economist/component-loading": "^1.0.0"
   },
   "devDependencies": {
     "babel": "^5.8.23",
