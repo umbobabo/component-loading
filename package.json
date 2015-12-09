@@ -1,6 +1,6 @@
 {
   "name": "@economist/component-loading",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A component that displays a very subtle loading indicator.",
   "author": "The Economist (http://economist.com)",
   "license": "ISC",
