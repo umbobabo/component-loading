@@ -127,7 +127,7 @@
   },
   "dependencies": {
     "@economist/component-devpack": "^3.5.0",
-    "@economist/component-typography": "^1.4.3",
+    "@economist/component-typography": "^2.0.0",
     "react-delay": "0.0.3"
   },
   "devDependencies": {
