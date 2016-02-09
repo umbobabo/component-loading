@@ -1,4 +1,6 @@
 import React from 'react';
+import Delay from 'react-delay';
+
 /* eslint-disable func-style */
 export default class Loading extends React.Component {
 
@@ -7,6 +9,7 @@ export default class Loading extends React.Component {
       className: React.PropTypes.string,
       overlay: React.PropTypes.bool,
       loadingText: React.PropTypes.string,
+      delay: React.PropTypes.number,
     };
   }
 
@@ -29,7 +32,18 @@ export default class Loading extends React.Component {
       );
     }
 
-    return (
+    const maybeDelay = (children) => {
+      if (typeof this.props.delay === 'number') {
+        return (
+          <Delay wait={this.props.delay}>
+            {children}
+          </Delay>
+        );
+      }
+      return children;
+    }
+
+    return maybeDelay(
       <div className={[ 'loading' ].concat(extraClassNames).join(' ')}>
         {els}
       </div>

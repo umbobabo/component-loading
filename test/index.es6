@@ -2,6 +2,7 @@
 import Loading from '..';
 import TestUtils from 'react-addons-test-utils';
 import React from 'react';
+import Delay from 'react-delay';
 
 describe('Loading', () => {
   describe(`is a React component`, () => {
@@ -37,6 +38,15 @@ describe('Loading', () => {
       const loadingText = main.props.children[0];
 
       loadingText.props.className.should.equal('loading__overlay');
+    });
+    it(`can be delayed`, () => {
+      const shallowRenderer = TestUtils.createRenderer();
+      shallowRenderer.render(React.createElement(Loading, { delay: 101 }));
+      const main = shallowRenderer.getRenderOutput();
+      const delay = main.props.children;
+
+      main.type.should.equal(Delay);
+      main.props.wait.should.equal(101);
     });
   });
 });
